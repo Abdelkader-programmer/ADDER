@@ -42,12 +42,6 @@
 | **FontAwesome** | High-Quality Iconography |
 | **Local Storage** | Client-side Data Persistence |
 
----
-
-## 📸 Preview
-
-> **ADDER** uses a high-contrast theme optimized for 8K resolution displays and modern web browsers.
-
 ```text
 1. Enter Admin Password 🔑
 2. Fill Product Specifications 📝
