@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- title -->
+    <title>Adder</title>
+    <!-- link css -->
+    <link rel="stylesheet" href="./src/style.css">
+    <!-- link style font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./src/all.min.css">
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- link icon -->
+    <link rel="icon" href="./imgs/Logo.webp">
+</head>
+<body>
+    <!-- * loading page -->
+    <section class="w-full h-screen fixed top-0 bg-black/95 z-50 show-and-hide">
+        <div class="w-full grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1">
+            <div></div>
+            <div class="w-full h-screen p-2 flex flex-col justify-center">
+                <div class="w-full mt-8">
+                    <img src="./imgs/brandHome.webp" alt="webp" class="w-[60%] m-auto border-4 border-[#d0b57d] rounded-xl img-loading-page">
+                </div>
+                <div class="wfull mt-8 text-center flex justify-center gap-1">
+                    <p class="text-2xl font-semibold text-white dotted-mode">Loading . . . . .</p>
+                </div>
+            </div>
+            <div></div>
+        </div>
+    </section>
+    <!-- * end loading page -->
+
+    <!-- NavBar -->
+    <header class="w-full bg-black p-2 fixed top-0 z-20">
+        <nav class="w-full bg-black">
+            <div class="w-full px-4 flex justify-between padding-mobile">
+                <div class="w-full flex gap-3 hide-img">
+                    <i class="fa-solid fa-sun text-3xl text-[#d0b57d] cursor-pointer active:rotate-180 duration-300 "></i>
+                    <i class="fa-solid fa-circle-user text-3xl text-[#d0b57d] cursor-pointer"></i>
+                </div>
+                <div class="w-full flex gap-3 justify-end items-center place-center">
+                    <div class="flex items-center gap-2 p-2 px-4 border-2 border-[#d0b57d] rounded-xl">
+                        <i class="fa-solid fa-cart-arrow-down text-3xl text-[#d0b57d]" id="cart"></i>
+                        <p class="text-[#d0b57d] text-2xl font-semibold num">0</p>
+                    </div>
+                    <div class="flex items-center gap-2 p-2 px-4 border-2 border-[#d0b57d] rounded-xl">
+                        <i class="fa-solid fa-heart text-3xl text-[#d0b57d]" id="heart"></i>
+                        <p class="text-[#d0b57d] text-2xl font-semibold numLove">0</p>
+                    </div>
+                    <div class="flex items-center gap-2 p-2 px-4 border-2 border-[#d0b57d] rounded-xl">
+                        <i class="fa-solid fa-bookmark text-3xl text-[#d0b57d]" id="saved"></i>
+                        <p class="text-[#d0b57d] text-2xl font-semibold numSave">0</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <nav class="w-full px-4 grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 mt-2">
+            <div class="w-full lg:col-span-1 md:col-span-1">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center gap-2">
+                        <img src="./imgs/brand.webp" alt="webp" class="w-16 h-16">
+                        <h1 class="text-[#d0b57d] text-3xl font-bold">ADDER</h1>
+                    </div>
+                    <div>
+                        <button id="toggle" class="p-1 border-2 rounded-lg text-3xl border-[#d0b57d] hideBtn show-btn"><i id="icon" class="fa-solid fa-bars text-[#d0b57d]">.</i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full lg:col-span-2 md:col-span-2">
+                <div class="text-center toggle-slide">
+                    <ul class="flex justify-around blockedLinks">
+                        <li class="mt-3.5"><a class="text-[#d0b57d] text-2xl font-bold blockedLinksHover" href="#home">Home</a></li>
+                        <li class="mt-3.5"><a class="text-[#d0b57d] text-2xl font-bold blockedLinksHover" href="#about">About</a></li>
+                        <li class="mt-3.5"><a class="text-[#d0b57d] text-2xl font-bold blockedLinksHover" href="https://github.com/Abdelkader-programmer/ADDER.git" target="_blank" rel="noopener noreferrer">GitHub <i class="fa-brands fa-github"></i></a></li>
+                        <li class="mt-3.5"><a href="#adder"><button class="text-[#d0b57d] p-0.5 border-2 border-[#d0b57d] rounded-md px-5 text-2xl font-bold active:translate-y-1 duration-200 hover-add-button">ADDER <i class="fa-brands fa-product-hunt"></i></button></a></li>
+                        <li class="mt-3.5"><a class="text-[#d0b57d] text-2xl font-bold blockedLinksHover" href="#com">communication</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- home section -->
+    <section id="home" class="w-full bg-black mt-[100px]">
+        <div class="w-full relative">
+            <!-- backGround -->
+            <img src="./imgs/banar.webp" alt="webp" class="w-[78.25%] h-[650px] m-auto">
+            <div class="w-full h-[650px] bg-black/80 absolute top-0"></div>
+            <!-- ---------- -->
+            <div class="w-full h-[650px] flex flex-col items-center absolute top-0 z-10">
+                <div class="w-[70%] m-auto mobile-width">
+                    <div class="w-full grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
+                        <div class="w-full">
+                            <div class="flex justify-center gap-3 items-center">
+                                <img src="./imgs/brand.webp" alt="webp" class="w-14 h-14">
+                                <h1 class="text-[#d0b57d] text-3xl font-bold">ADDER</h1>
+                            </div>
+                            <div class="flex gap-2 items-center mt-3">
+                                <i class="fa-solid fa-person-circle-plus text-[#d0b57d] w-14 h-14"></i>
+                                <p class="text-[#d0b57d] text-2xl font-bold mt-5">Add New Product</pر>
+                            </div>
+                            <div>
+                                <div class="flex gap-2 items-center mt-5">
+                                    <i class="fa-solid fa-location-crosshairs text-[#d0b57d] w-10 h-10"></i>
+                                    <p class="text-white text-lg font-semibold">Easily list your items by filling out the details below. Upload high-quality images and set your pricing to get started.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex gap-2 items-center mt-5">
+                                    <i class="fa-solid fa-location-crosshairs text-[#d0b57d] w-10 h-10"></i>
+                                    <div>
+                                        <p class="text-white text-lg font-bold">Ready to grow your business?</p>
+                                        <p class="text-white text-lg font-semibold">Fill in the product information, add stunning visuals, and reach thousands of customers in just a few clicks.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full text-center mt-5">
+                                <i class="fa-brands fa-product-hunt text-[#d0b57d] w-20 h-20"></i>
+                            </div>
+                            <div class="w-full mt-5">
+                                <a href="#">
+                                    <div class="w-full text-center">
+                                        <button class="w-[90%] p-2 border-2 border-[#d0b57d] rounded-lg text-[#d0b57d] text-2xl font-bold m-auto hover-link-home active:translate-y-2 duration-300">Add Products <i class="fa-solid fa-file-circle-plus"></i></button>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- img -->
+                        <div class="w-full flex flex-col items-center justify-center hide-img-brand-home">
+                            <img src="./imgs/brandHome.webp" alt="webp" class="border-4 border-[#d0b57d] rounded-tl-lg rounded-br-lg rounded-tr-3xl rounded-bl-3xl shadow-img hide-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- about section -->
+    <section id="about" class="w-full mt-[200px]">
+        <h1 class="text-black text-3xl font-bold text-center">About <i class="fa-solid fa-circle-info"></i></h1>
+        <div class="w-[70%] mt-10 grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1  m-auto mobile-width">
+            <div class="w-full border-4 border-black rounded-xl p-2 border-l-[15px]">
+                <p class="text-2xl font-semibold text-black">
+                    A streamlined system that allows you to list diverse products in seconds, featuring an intuitive interface that makes inventory management effortless.
+                </p>
+                <div class="w-full text-center">
+                    <i class="fa-solid fa-face-grin text-black w-16 h-16 mt-5"></i>
+                    <i class="fa-solid fa-handshake text-black w-16 h-16 mt-5"></i>
+                </div>
+            </div>
+            <div class="w-full">
+                <img src="./imgs/about-one.webp" alt="webp" class="w-[85%] h-[250px] object-cover m-auto rounded-xl hide-img">
+            </div>
+        </div>
+        <div class="w-full bg-black mt-5">
+            <div class="w-[70%] py-5 grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1  m-auto mobile-width">
+                <div class="w-full">
+                    <img src="./imgs/about-two.webp" alt="webp" class="w-[85%] m-auto rounded-xl h-[250px] object-cover  border-4 border-[#d0b57d] hide-img">
+                </div>
+                <div class="w-full border-4 border-[#d0b57d] rounded-xl p-2 border-r-[15px]">
+                    <p class="text-2xl font-semibold text-[#d0b57d]">
+                        Give your products the spotlight they deserve; fully customize everything from visuals and pricing to detailed descriptions to effectively reach your target audience.
+                    </p>
+                    <div class="w-full flex justify-center gap-4">
+                        <i class="fa-regular fa-file-image text-[#d0b57d] w-16 h-16 mt-5"></i>
+                        <i class="fa-regular fa-money-bill-1 text-[#d0b57d] w-16 h-16 mt-5"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-[70%] mt-5 grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1  m-auto mobile-width">
+            <div class="w-full border-4 border-black rounded-xl p-2 border-l-[15px]">
+                <p class="text-2xl font-semibold text-black">
+                    An integrated interactive experience built on modern technology to ensure instant updates, with quick tracking features to help you monitor your business growth in real-time.
+                </p>
+                <div class="w-full text-center">
+                    <i class="fa-solid fa-person-circle-check text-black w-16 h-16 mt-5"></i>
+                    <i class="fa-solid fa-user-plus text-black w-16 h-16 mt-5"></i>
+                </div>
+            </div>
+            <div class="w-full">
+                <img src="./imgs/about-three.webp" alt="webp" class="w-[85%] m-auto rounded-xl h-[275px] object-cover hide-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- ADDER section -->
+    <section id="adder" class="w-full mt-[200px] bg-black p-4">
+        <h1 class="text-[#d0b57d] text-3xl font-bold text-center">ADDER <i class="fa-solid fa-folder-plus"></i></h1>
+        <!-- adding btn -->
+        <div class="w-full mt-5 text-center">
+            <button id="openForm" class="text-[#d0b57d] p-0.5 border-2 border-[#d0b57d] rounded-md px-5 text-2xl font-bold hover-add-product active:translate-y-1 duration-200">To Add Product <i class="fa-solid fa-circle-plus"></i></button>
+        </div>
+        <div class="w-full mt-10">
+            <div class="w-full o-4 grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1" id="PlaceProduct">
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Password Section -->
+    <section id="SicPas" class="w-full h-screen bg-black/95 fixed top-0 z-20 cloth-password">
+        <div class="w-full h-screen p-2 grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1">
+            <div></div>
+            <div class="[95%] m-auto">
+                <div class="w-full">
+                    <h1 class="text-3xl text-[#d0b57d] font-bold text-center">Enter Password <i class="fa-solid fa-key"></i></h1>
+                </div>
+                <div class="w-full text-center mt-10">
+                    <i class="fa-solid fa-unlock-keyhole w-20 h-20 text-[#d0b57d] top-and-down"></i>
+                </div>
+                <div class="w-full p-4 border-4 border-[#d0b57d] rounded-xl mt-5 relative">
+                    <div class="w-full text-center">
+                        <label for="lpPass" class="text-xl text-white font-semibold">
+                            Your Password
+                        </label>
+                        <button class="text-xl text-black absolute top-[53px] right-6" id="changeMode"><i id="iconEye" class="fa-solid fa-eye-slash">.</i></button>
+                        <input type="password" id="lpPass" class="w-full p-1 rounded-xl mt-2 text-center outline-none focus:shadow-md focus:shadow-white duration-200" placeholder="Password">
+                        <button id="btnGo" class="w-[70%] mt-5 p-1 text-[#d0b57d] text-2xl border-4 border-[#d0b57d] rounded-xl active:bg-[#d0b57d] active:text-black active:translate-y-1 duration-200">Go <i class="fa-solid fa-angles-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div></div>
+        </div>
+    </section>
+
+    <!-- form add products -->
+    <section id="SicForm" class="w-full h-screen bg-black/95 fixed top-0 overflow-y-auto z-30 cloth-Form">
+        <div class="p-2">
+            <div class="w-full px-3 text-right fixed top-2 right-5">
+                <button id="closeForm" class="p-2 border-2 border-red-600 rounded-full text-red-600 text-xl active:text-white active:bg-red-600 active:translate-y-1 duration-200"><i class="fa-solid fa-x">.</i></button>
+            </div>
+
+        </div>
+        <div class="w-full mt-14">
+            <h1 class="text-3xl text-[#d0b57d] font-bold text-center">Add Products <i class="fa-solid fa-circle-plus"></i></h1>
+        </div>
+        <form class="w-full h-screen p-2 grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1">
+            <div></div>
+            <div class="w-full h-screen">
+                <div class="w-full flex flex-col justify-center gap-3 items-center mt-5">
+                    <label class="text-white text-2xl font-semibold">Product Img</label>
+                    <div>
+                        <label for="img" class="text-[#d0b57d] font-semibold cursor-pointer"><i class="fa-solid fa-file-image h-14 w-14 active:text-white active:translate-y-1 duration-200">.</i></label>
+                        <input type="file" id="img" class="text-white hidden" required>
+                    </div>
+                </div>
+                <hr class="w-[90%] bg-[#d0b57d] mt-3 m-auto">
+                <div class="w-full text-center mt-5">
+                    <label for="name" class="text-white text-2xl font-semibold">Product Name</label>
+                    <div>
+                        <input type="text" id="brandName" placeholder="Name" class="w-[90%] mt-3 bg-white p-2 rounded-xl outline-none text-center text-black focus:shadow-md focus:shadow-blue-300 duration-200" required>
+                    </div>
+                </div>
+                <hr class="w-[90%] bg-[#d0b57d] mt-3 m-auto">
+                <div class="w-full text-center mt-5">
+                    <label for="type" class="text-white text-2xl font-semibold">Product Type</label>
+                    <div>
+                        <input type="text" id="type" placeholder="Type" class="w-[90%] mt-3 bg-white p-2 rounded-xl outline-none text-center text-black focus:shadow-md focus:shadow-blue-300 duration-200" required>
+                    </div>
+                </div>
+                <hr class="w-[90%] bg-[#d0b57d] mt-3 m-auto">
+                <div class="w-full text-center mt-5">
+                    <label for="model" class="text-white text-2xl font-semibold">Product Model</label>
+                    <div>
+                        <input type="number" id="model" placeholder="Model" class="w-[90%] mt-3 bg-white p-2 rounded-xl outline-none text-center text-black focus:shadow-md focus:shadow-blue-300 duration-200" required>
+                    </div>
+                </div>
+                <hr class="w-[90%] bg-[#d0b57d] mt-3 m-auto">
+                <div class="w-full text-center mt-5">
+                    <label for="description" class="text-white text-2xl font-semibold">Product Description</label>
+                    <div>
+                        <textarea name="" id="description" placeholder="Description" class="w-[90%] mt-3 bg-white p-2 rounded-xl outline-none text-center text-black focus:shadow-md focus:shadow-blue-300 duration-200" required></textarea>
+                    </div>
+                </div>
+                <hr class="w-[90%] bg-[#d0b57d] mt-3 m-auto">
+                <div class="w-full text-center mt-5">
+                    <label for="color" class="text-white text-2xl font-semibold">Product Color</label>
+                    <div>
+                        <input type="text" id="color" placeholder="Color" class="w-[90%] mt-3 bg-white p-2 rounded-xl outline-none text-center text-black focus:shadow-md focus:shadow-blue-300 duration-200" required>
+                    </div>
+                </div>
+                <hr class="w-[90%] bg-[#d0b57d] mt-3 m-auto">
+                <div class="w-full text-center mt-5">
+                    <label for="amount" class="text-white text-2xl font-semibold">Product Amount</label>
+                    <div>
+                        <input type="number" id="amount" placeholder="Amount" class="w-[90%] mt-3 bg-white p-2 rounded-xl outline-none text-center text-black focus:shadow-md focus:shadow-blue-300 duration-200" required>
+                    </div>
+                </div>
+                <hr class="w-[90%] bg-[#d0b57d] mt-3 m-auto">
+                <div class="w-full text-center mt-5">
+                    <label for="price" class="text-white text-2xl font-semibold">Product Price</label>
+                    <div>
+                        <input type="text" id="price" placeholder="Price" class="w-[90%] mt-3 bg-white p-2 rounded-xl outline-none text-center text-black focus:shadow-md focus:shadow-blue-300 duration-200" required>
+                    </div>
+                </div>
+                <hr class="w-[90%] bg-[#d0b57d] mt-10 m-auto">
+                <div class="w-full p-5 mt-5">
+                    <button type="submit" id="btnAddProduct" class="w-full p-2 text-[#d0b57d] text-2xl border-4 border-[#d0b57d] rounded-xl active:bg-[#d0b57d] active:text-black active:translate-y-1 duration-200">Add To Store <i class="fa-solid fa-folder-plus"></i></button>
+                </div>
+            </div>
+            <div></div>
+        </form>
+    </section>
+
+    <!-- communication -->
+    <section id="com" class="w-full mt-[200px] p-4">
+        <h1 class="text-black text-3xl font-bold text-center">Communication <i class="fa-solid fa-comments"></i></h1>
+        <div class="w-full m-auto mt-10 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+            <div class="w-full p-2">
+                <div class="w-[95%] m-auto p-2 border-4 border-black rounded-xl hover:scale-105 duration-200">
+                    <div class="w-full text-center">
+                        <i class="fa-brands fa-whatsapp w-14 h-14 text-green-500"></i>
+                    </div>
+                    <div class="w-full text-center">
+                        <p class="text-xl font-semibold mt-3">+ 010 1236 8794</p>
+                        <p class="text-xl font-semibold mt-3">+ 011 1236 8794</p>
+                        <p class="text-xl font-semibold mt-3">+ 012 1236 8794</p>
+                        <p class="text-xl font-semibold mt-3">+ 015 1236 8794</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full p-2 rounded-xl">
+                <div class="w-[95%] m-auto p-2 bg-black border-4 border-[#d0b57d] rounded-xl hover:scale-105 duration-200">
+                    <div class="w-full text-center">
+                        <i class="fa-brands fa-telegram w-14 h-14 text-blue-500"></i>
+                    </div>
+                    <div class="w-full text-center">
+                        <p class="text-xl font-semibold mt-3 text-[#d0b57d]">+ 010 1236 8794</p>
+                        <p class="text-xl font-semibold mt-3 text-[#d0b57d]">+ 011 1236 8794</p>
+                        <p class="text-xl font-semibold mt-3 text-[#d0b57d]">+ 012 1236 8794</p>
+                        <p class="text-xl font-semibold mt-3 text-[#d0b57d]">+ 015 1236 8794</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full p-2">
+                <div class="w-[95%] m-auto p-2 border-4 border-black rounded-xl hover:scale-105 duration-200">
+                    <div class="w-full text-center">
+                        <i class="fa-brands fa-google w-14 h-14 text-red-600"></i>
+                    </div>
+                    <div class="w-full text-center">
+                        <div>
+                            <textarea id="SendMsg" class="w-[90%] p-2 outline-none border-2 border-black rounded-xl mt-3 text-center focus:shadow-md focus:shadow-gray-400 duration-200" placeholder="Your Message"></textarea>
+                        </div>
+                        <div>
+                            <button id="sending" class="w-[80%] p-2 border-4 border-green-500 rounded-xl text-green-500 font-semibold text-xl mt-5 -translate-y-2 active:translate-y-1 active:text-white active:bg-green-500 duration-200">Send <i class="fa-solid fa-paper-plane rotate-45"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="mt-[200px]">
+        <div class="w-full p-4 bg-black grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1">
+            <div class="w-full mt-3">
+                <h1 class="text-3xl text-[#d0b57d] font-bold text-center">Company <i class="fa-regular fa-building"></i></h1>
+                <div class="ml-10 mt-3">
+                    <p class="text-3xl text-white font-thin mt-3"><i class="fa-regular fa-house text-[#d0b57d]"></i> Home</p>
+                    <p class="text-3xl text-white font-thin mt-3"><i class="fa-solid fa-circle-info text-[#d0b57d]"></i> About</p>
+                    <p class="text-3xl text-white font-thin mt-3"><i class="fa-solid fa-file-circle-plus text-[#d0b57d]"></i> ADDER</p>
+                    <p class="text-3xl text-white font-thin mt-3"><i class="fa-regular fa-comments text-[#d0b57d]"></i> Communication</p>
+                </div>
+            </div>
+            <div class="w-full mt-3">
+                <h1 class="text-3xl text-[#d0b57d] font-bold text-center">Contact <i class="fa-solid fa-mobile-screen-button"></i></h1>
+                <div class="ml-10 mt-3">
+                    <p class="text-3xl text-white font-thin mt-3"><i class="fa-brands fa-whatsapp text-green-500"></i> Whats APP</p>
+                    <p class="text-3xl text-white font-thin mt-3"><i class="fa-brands fa-telegram text-blue-400"></i> Telegram</p>
+                    <p class="text-3xl text-white font-thin mt-3"><i class="fa-solid fa-envelope-circle-check text-[#d0b57d]"></i> Email</p>
+                    <p class="text-3xl text-white font-thin mt-3"><i class="fa-solid fa-comment-sms text-[#d0b57d]"></i> SMS Text</p>
+                </div>
+            </div>
+            <div class="w-full mt-3">
+                <h1 class="text-3xl text-[#d0b57d] font-bold text-center">Address <i class="fa-solid fa-location-dot"></i></h1>
+                <div class="ml-10 mt-3">
+                    <p class="text-3xl text-white font-thin mt-3"><i class="fa-solid fa-computer text-[#d0b57d]"></i> Computer</p>
+                    <p class="text-3xl text-white font-thin mt-3"><i class="fa-solid fa-laptop text-[#d0b57d]"></i> Laptop</p>
+                    <p class="text-3xl text-white font-thin mt-3"><i class="fa-solid fa-tablet-screen-button text-[#d0b57d]"></i> Tablet</p>
+                    <p class="text-3xl text-white font-thin mt-3"><i class="fa-solid fa-mobile-screen-button text-[#d0b57d]"></i> Mobile</p>
+                </div>
+            </div>
+            <div class="w-full mt-3">
+                <h1 class="text-3xl text-[#d0b57d] font-bold text-center">Developer <i class="fa-solid fa-laptop-code text-[#d0b57d]"></i></h1>
+                <div class="mt-3">
+                    <h2 class="text-2xl text-[#d0b57d] font-thin text-center">Abdelkader Mahmoud</h2>
+                    <div class="w-full flex justify-center gap-5 mt-3">
+                        <a href="https://www.linkedin.com/in/abdelkader-mahmoud/" target="_blank" rel="noopener noreferrer" title="Linkedin"><i class="fa-brands fa-linkedin-in w-8 h-8 text-blue-600"></i></a>
+                        <a href="https://github.com/Abdelkader-programmer" target="_blank" rel="noopener noreferrer" title="Github"><i class="fa-brands fa-github w-8 h-8 text-white"></i></a>
+                        <a href="https://web.facebook.com/abdelkader.el.shehawy.2025" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fa-brands fa-facebook-f w-8 h-8 text-blue-600"></i></a>
+                    </div>
+                    <div class="w-full">
+                        <img src="./imgs/myLogo.webp" alt="webp" class="w-[25%] rounded-full mt-3 border-2 border-[#d0b57d] m-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full bg-black p-4">
+            <hr class="w-[80%] bg-[#d0b57d] mt-3 m-auto">
+            <div class="flex items-center gap-2 justify-center mt-3">
+                <img src="./imgs/brand.webp" alt="webp" class="w-16 h-16">
+                <h1 class="text-[#d0b57d] text-3xl font-bold">ADDER</h1>
+                <a href="#" title="Top"><i class="fa-regular fa-hand-point-up w-14 h-14 text-[#d0b57d]"></i></a>
+            </div>
+        </div>
+        <h2 class="text-center">By : Abdelkader Elshehawy@2026</h2>
+    </footer>
+    <!-- link js -->
+    <script src="./src/all.min.js"></script>
+    <!-- link js -->
+    <script type="module" src="./dist/index.js"></script>
+</body>
+</html>
